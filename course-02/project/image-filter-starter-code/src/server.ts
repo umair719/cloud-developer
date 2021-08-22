@@ -38,7 +38,7 @@ import { filterImageFromURL, deleteLocalFiles, validURL } from "./util/util";
             headers: {
               "x-timestamp": Date.now(),
               "x-sent": true,
-            },
+            }
           };
           response.sendFile(fileName, options, function (err) {
             if (err) {
@@ -49,7 +49,7 @@ import { filterImageFromURL, deleteLocalFiles, validURL } from "./util/util";
           });
         })
         .catch((err) => {
-          response.status(422).send("Error processing the request" + err);
+          response.status(422).send("Error processing the request: " + err);
         });
     } else {
       response
