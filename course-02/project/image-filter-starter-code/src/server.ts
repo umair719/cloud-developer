@@ -40,7 +40,7 @@ import { filterImageFromURL, deleteLocalFiles, validURL } from "./util/util";
               "x-sent": true,
             }
           };
-          response.sendFile(fileName, options, function (err) {
+          response.status(200).sendFile(fileName, options, function (err) {
             if (err) {
               response.status(500).send(err);
             } else {
